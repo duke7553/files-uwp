@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Caching.Memory;
+﻿using Files.Common;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -20,23 +21,17 @@ namespace Files.Helpers.FileListCache
             persistentAdapter = new PersistentSQLiteCacheAdapter();
         }
 
-        private readonly IMemoryCache fileNamesCache = new MemoryCache(new MemoryCacheOptions
-        {
-            SizeLimit = 1_000_000
-        });
+        private readonly Dictionary<string, object> fileNamesCache = new Dictionary<string, object>();
 
         public async Task<string> ReadFileDisplayNameFromCache(string path, CancellationToken cancellationToken)
         {
-            var displayName = fileNamesCache.Get<string>(path);
+            var displayName = fileNamesCache.Get(path, (string)null);
             if (displayName == null)
             {
                 displayName = await persistentAdapter.ReadFileDisplayNameFromCache(path, cancellationToken);
                 if (displayName != null)
                 {
-                    fileNamesCache.Set(path, displayName, new MemoryCacheEntryOptions
-                    {
-                        Size = 1
-                    });
+                    fileNamesCache[path] = displayName;
                 }
             }
             return displayName;
@@ -49,10 +44,7 @@ namespace Files.Helpers.FileListCache
                 fileNamesCache.Remove(path);
                 return persistentAdapter.SaveFileDisplayNameToCache(path, displayName);
             }
-            fileNamesCache.Set(path, displayName, new MemoryCacheEntryOptions
-            {
-                Size = 1
-            });
+            fileNamesCache[path] = displayName;
 
             // save entry to persistent cache in background
             return persistentAdapter.SaveFileDisplayNameToCache(path, displayName);
