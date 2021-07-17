@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="SideBarOpenInNewTab.Text" xml:space="preserve">
+    <value>გახსენით ახალ ჩანართში</value>
+  </data>
+  <data name="SideBarOpenInNewWindow.Text" xml:space="preserve">
+    <value>გახსენით ახალ ფანჯარაში</value>
+  </data>
+  <data name="NavigationToolbarNewTab.Label" xml:space="preserve">
+    <value>ახალი ჩანართი</value>
+  </data>
+  <data name="NavigationToolbarNewWindow.Label" xml:space="preserve">
+    <value>ახალი ფანჯარა</value>
+  </data>
+  <data name="ModernNavigationToolbaNewFolder.Text" xml:space="preserve">
+    <value>საქაღალდე</value>
+  </data>
+  <data name="ModernNavigationToolbaNewBitmapImage.Text" xml:space="preserve">
+    <value>ბიტმაპ სურათი</value>
+  </data>
+  <data name="ModernNavigationToolbaNewTextDocument.Text" xml:space="preserve">
+    <value>ტექსტური დოკუმენტი</value>
+  </data>
+  <data name="NavigationToolbarCopyPath.Label" xml:space="preserve">
+    <value>ასლის ადგილმდებარეობა</value>
+  </data>
+  <data name="NavigationToolbarPaste.Label" xml:space="preserve">
+    <value>ჩასმა</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>გადათვალიერება</value>
+  </data>
+  <data name="SidebarDrives" xml:space="preserve">
+    <value>დისკები</value>
+  </data>
+  <data name="nameColumn.Header" xml:space="preserve">
+    <value>სახელი</value>
+  </data>
+  <data name="dateColumn.Header" xml:space="preserve">
+    <value>შეცვლის თარიღი</value>
+  </data>
+  <data name="typeColumn.Header" xml:space="preserve">
+    <value>ტიპი</value>
+  </data>
+  <data name="sizeColumn.Header" xml:space="preserve">
+    <value>ზომა</value>
+  </data>
+  <data name="NavigationToolbarOpenInTerminal.Label" xml:space="preserve">
+    <value>გახსენით ტერმინალში...</value>
+  </data>
+  <data name="PropertiesCreated.Text" xml:space="preserve">
+    <value>შექმნილია:</value>
+  </data>
+  <data name="PropertiesItemFileName.PlaceholderText" xml:space="preserve">
+    <value>ნივთის სახელი</value>
+  </data>
+  <data name="PropertiesItemPath.Text" xml:space="preserve">
+    <value>გზა:</value>
+  </data>
+  <data name="PropertiesItemSize.Text" xml:space="preserve">
+    <value>ზომა:</value>
+  </data>
+  <data name="ErrorDialogThisActionCannotBeDone" xml:space="preserve">
+    <value>ეს მოქმედება ვერ განხორციელდება</value>
+  </data>
+  <data name="ErrorDialogTheDestinationFolder" xml:space="preserve">
+    <value>დანიშნულების საქაღალდე</value>
+  </data>
+  <data name="ErrorDialogIsASubfolder" xml:space="preserve">
+    <value>არის წყაროს საქაღალდის ქვე-საქაღალდე</value>
+  </data>
+  <data name="ErrorDialogSkip" xml:space="preserve">
+    <value>გამოტოვება</value>
+  </data>
+  <data name="ErrorDialogCancel" xml:space="preserve">
+    <value>გაუქმება</value>
+  </data>
+  <data name="PropertiesItemType.Text" xml:space="preserve">
+    <value>ნივთის ტიპი:</value>
+  </data>
+  <data name="NavToolbarSelectAll.Text" xml:space="preserve">
+    <value>მონიშნეთ ყველა</value>
+  </data>
+  <data name="NavToolbarInvertSelection.Text" xml:space="preserve">
+    <value>შებრუნებული მონიშვნა</value>
+  </data>
+  <data name="NavToolbarClearSelection.Text" xml:space="preserve">
+    <value>მონიშვნების გასუფთავება</value>
+  </data>
+  <data name="BaseLayoutContextFlyoutDetails.Text" xml:space="preserve">
+    <value>დეტალების მიმოხილვა</value>
+  </data>
+  <data name="PropertiesModified.Text" xml:space="preserve">
+    <value>განახლდა:</value>
+  </data>
+  <data name="PropertiesAccessed.Text" xml:space="preserve">
+    <value>წვდომა:</value>
+  </data>
+  <data name="RecentItemClearAll.Text" xml:space="preserve">
+    <value>ყველა ნივთის გასუფთავება</value>
+  </data>
+  <data name="NavigationToolbarVisiblePath.PlaceholderText" xml:space="preserve">
+    <value>შეიყვანეთ გზა</value>
+  </data>
+  <data name="NavigationToolbarSearchReigon.PlaceholderText" xml:space="preserve">
+    <value>ძებნა</value>
+  </data>
+  <data name="RecentItemDescription.Text" xml:space="preserve">
+    <value>საქაღალდეებზე, რომლებზეც წვდომა ადრე გქონდათ აქ გამოჩნდებიან</value>
+  </data>
+  <data name="RecentItemOpenFileLocation.Text" xml:space="preserve">
+    <value>გახსენით ფაილის ადგილმდებარეობა</value>
+  </data>
+  <data name="RecentItemRemove.Text" xml:space="preserve">
+    <value>წაშალეთ ეს ნივთი</value>
+  </data>
+  <data name="RecentFilesHeader.Text" xml:space="preserve">
+    <value>ბოლო ფაილები</value>
+  </data>
+  <data name="SettingsUsefulLinks.Title" xml:space="preserve">
+    <value>სასარგებლო ბმულები</value>
+  </data>
+  <data name="SettingCopyVersionInfo.Content" xml:space="preserve">
+    <value>ასლის გაკეთება</value>
+  </data>
+</root>
