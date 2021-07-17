@@ -16,11 +16,14 @@ namespace Files.DataModels
 
         public string DestinationPath;
 
-        public FilesystemItemsOperationItemModel(FilesystemOperationType operationType, string sourcePath, string destinationPath)
+        public string DisplayFileName;
+
+        public FilesystemItemsOperationItemModel(FilesystemOperationType operationType, string sourcePath, string destinationPath, string displayFileName = null)
         {
             this.OperationType = operationType;
             this.SourcePath = sourcePath;
             this.DestinationPath = destinationPath;
+            this.DisplayFileName = displayFileName;
         }
     }
 
@@ -71,6 +74,7 @@ namespace Files.DataModels
                     ItemIcon = iconData != null ? await iconData.ToBitmapAsync() : null,
                     SourcePath = item.SourcePath,
                     DestinationPath = item.DestinationPath,
+                    DisplayFileName = item.DisplayFileName,
                     ConflictResolveOption = FileNameConflictResolveOptionType.GenerateNewName,
                     ItemOperation = item.OperationType,
                     ActionTaken = false
@@ -88,6 +92,7 @@ namespace Files.DataModels
                     ItemIcon = iconData != null ? await iconData.ToBitmapAsync() : null,
                     SourcePath = item.SourcePath,
                     DestinationPath = item.DestinationPath,
+                    DisplayFileName = item.DisplayFileName,
                     ConflictResolveOption = FileNameConflictResolveOptionType.NotAConflict,
                     ItemOperation = item.OperationType,
                     ActionTaken = true

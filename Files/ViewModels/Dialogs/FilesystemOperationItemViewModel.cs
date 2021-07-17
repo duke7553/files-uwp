@@ -71,9 +71,11 @@ namespace Files.ViewModels.Dialogs
             get => System.IO.Path.GetFileName(System.IO.Path.GetDirectoryName(DestinationPath));
         }
 
+        private string displayFileName;
         public string DisplayFileName
         {
-            get => string.IsNullOrEmpty(DestinationPath) ? System.IO.Path.GetFileName(SourcePath) : System.IO.Path.GetFileName(DestinationPath);
+            get => displayFileName ?? (string.IsNullOrEmpty(DestinationPath) ? System.IO.Path.GetFileName(SourcePath) : System.IO.Path.GetFileName(DestinationPath));
+            set => displayFileName = value;
         }
 
         public string TakenActionText
