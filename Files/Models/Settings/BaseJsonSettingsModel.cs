@@ -173,42 +173,6 @@ namespace Files.Models.Settings
         {
             try
             {
-                // Check if caching is enabled
-                if (isCachingEnabled)
-                {
-                    // If cache contains the setting...
-                    if (settingsCache.ContainsKey(propertyName))
-                    {
-                        TValue settingValue;
-
-                        // Get the object
-                        object settingObject = settingsCache[propertyName];
-
-                        // Check if it's a JToken object
-                        if (settingObject is JToken jtoken)
-                        {
-                            // Get the value from JToken
-                            settingValue = jtoken.ToObject<TValue>();
-                        }
-                        else
-                        {
-                            // Otherwise, it is TValue, get the value
-                            settingValue = (TValue)settingObject;
-                        }
-
-                        // Compare the setting and the new value
-                        if (EqualityComparer<TValue>.Default.Equals(value, settingValue))
-                        {
-                            // Both are equal meaning the cache doesn't have to be reloaded, return
-                            return false;
-                        }
-
-                        // The values aren't equal, continue, to update the file and cache
-                    }
-
-                    // The value doesn't exist, continue, to update the file and cache
-                }
-
                 // If cache doesn't contain the setting...
                 if (!settingsCache.ContainsKey(propertyName))
                 {

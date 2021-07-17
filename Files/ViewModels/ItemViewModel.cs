@@ -1127,6 +1127,7 @@ namespace Files.ViewModels
             }
             finally
             {
+                DirectoryInfoUpdated?.Invoke(this, EventArgs.Empty); // Make sure item count is updated
                 enumFolderSemaphore.Release();
                 itemLoadEvent.Set();
             }

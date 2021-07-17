@@ -188,8 +188,6 @@ namespace Files.Views
             SystemNavigationManager.GetForCurrentView().BackRequested += ModernShellPage_BackRequested;
 
             App.DrivesManager.PropertyChanged += DrivesManager_PropertyChanged;
-
-            AppServiceConnectionHelper.ConnectionChanged += AppServiceConnectionHelper_ConnectionChanged;
         }
 
         void InitToolbarCommands()
@@ -522,8 +520,6 @@ namespace Files.Views
         public static readonly DependencyProperty NavParamsProperty =
             DependencyProperty.Register("NavParams", typeof(string), typeof(ModernShellPage), new PropertyMetadata(null));
 
-        public NamedPipeAsAppServiceConnection ServiceConnection { get; private set; }
-
         private TabItemArguments tabItemArguments;
 
         public TabItemArguments TabItemArguments
@@ -563,7 +559,7 @@ namespace Files.Views
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private async void Page_Loaded(object sender, RoutedEventArgs e)
+        private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             FilesystemViewModel = new ItemViewModel(InstanceViewModel?.FolderSettings);
             FilesystemViewModel.WorkingDirectoryModified += ViewModel_WorkingDirectoryModified;
@@ -572,7 +568,6 @@ namespace Files.Views
             FilesystemViewModel.PageTypeUpdated += FilesystemViewModel_PageTypeUpdated;
             FilesystemViewModel.OnSelectionRequestedEvent += FilesystemViewModel_OnSelectionRequestedEvent;
             OnNavigationParamsChanged();
-            ServiceConnection = await AppServiceConnectionHelper.Instance;
             this.Loaded -= Page_Loaded;
         }
 
@@ -945,13 +940,6 @@ namespace Files.Views
             {
                 disposableContent?.Dispose();
             }
-
-            AppServiceConnectionHelper.ConnectionChanged -= AppServiceConnectionHelper_ConnectionChanged;
-        }
-
-        private async void AppServiceConnectionHelper_ConnectionChanged(object sender, Task<NamedPipeAsAppServiceConnection> e)
-        {
-            ServiceConnection = await e;
         }
 
         private void FilesystemViewModel_ItemLoadStatusChanged(object sender, ItemLoadStatusChangedEventArgs e)
